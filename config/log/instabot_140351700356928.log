@@ -1,0 +1,19 @@
+2020-07-14 05:09:34,303 - instabot version: 0.117.0 (bot) - INFO - Instabot version: 0.117.0 Started
+2020-07-14 05:09:34,303 - instabot version: 0.117.0 (bot) - DEBUG - Bot imported from /home/harvey/.local/lib/python3.8/site-packages/instabot/bot/bot.py
+2020-07-14 05:09:34,304 - instabot version: 0.117.0 (api_login) - DEBUG - Loading uuids
+2020-07-14 05:09:34,304 - instabot version: 0.117.0 (api_login) - INFO - Recovery from /home/harvey/Desktop/GodBot_Instagram/config/Game_Revisto_uuid_and_cookie.json: COOKIE False - UUIDs True - TIMING, DEVICE and ...
+- user-agent=Instagram 117.0.0.28.123 Android (28/9.0; 420dpi; 1080x1920; OnePlus; ONEPLUS A3003; OnePlus3; qcom; en_US; 180322800)
+- phone_id=b697252d-f6d1-45e0-8137-64e31a29a7cf
+- uuid=19d2ce08-b2be-42ca-876b-e6047be2a463
+- client_session_id=9a4a1119-0ef2-402c-9be6-192fa7caf6ff
+- device_id=android-1c85790544379d27
+2020-07-14 05:09:34,304 - instabot version: 0.117.0 (api_login) - INFO - Not yet logged in starting: PRE-LOGIN FLOW!
+2020-07-14 05:09:35,099 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: accounts/get_prefill_candidates/ returned response: <Response [200]>
+2020-07-14 05:09:35,835 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: qe/sync/ returned response: <Response [200]>
+2020-07-14 05:09:36,575 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: launcher/sync/ returned response: <Response [200]>
+2020-07-14 05:09:37,234 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: accounts/contact_point_prefill/ returned response: <Response [200]>
+2020-07-14 05:09:39,045 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: accounts/login/ returned response: <Response [200]>
+2020-07-14 05:09:39,045 - instabot version: 0.117.0 (api) - INFO - Logged-in successfully as 'Game_Revisto'!
+2020-07-14 05:09:39,045 - instabot version: 0.117.0 (api_login) - INFO - LOGIN FLOW! Just logged-in: True
+2020-07-14 05:09:39,728 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: qe/sync/ returned response: <Response [200]>
+2020-07-14 05:09:40,353 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: launcher/sync/ returned response: <Response [200]>

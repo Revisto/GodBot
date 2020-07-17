@@ -1,0 +1,43 @@
+2020-07-02 22:29:49,175 - instabot version: 0.117.0 (bot) - INFO - Instabot version: 0.117.0 Started
+2020-07-02 22:29:49,175 - instabot version: 0.117.0 (bot) - DEBUG - Bot imported from /usr/local/lib/python3.6/dist-packages/instabot/bot/bot.py
+2020-07-02 22:29:49,175 - instabot version: 0.117.0 (api_login) - INFO - Not yet logged in starting: PRE-LOGIN FLOW!
+2020-07-02 22:29:50,178 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: accounts/get_prefill_candidates/ returned response: <Response [200]>
+2020-07-02 22:29:51,101 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: qe/sync/ returned response: <Response [200]>
+2020-07-02 22:29:52,034 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: launcher/sync/ returned response: <Response [200]>
+2020-07-02 22:29:52,780 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: accounts/contact_point_prefill/ returned response: <Response [200]>
+2020-07-02 22:29:55,100 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: accounts/login/ returned response: <Response [200]>
+2020-07-02 22:29:55,100 - instabot version: 0.117.0 (api) - INFO - Logged-in successfully as 'game_revisto'!
+2020-07-02 22:29:55,100 - instabot version: 0.117.0 (api_login) - INFO - LOGIN FLOW! Just logged-in: True
+2020-07-02 22:29:55,922 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: qe/sync/ returned response: <Response [200]>
+2020-07-02 22:29:56,882 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: launcher/sync/ returned response: <Response [200]>
+2020-07-02 22:29:57,564 - instabot version: 0.117.0 (api) - DEBUG - GET to endpoint: zr/token/result/?device_id=android-a9674afdf0eb5b2a&token_hash=&custom_device_id=android-a9674afdf0eb5b2a&fetch_reason=token_expired returned response: <Response [200]>
+2020-07-02 22:29:58,463 - instabot version: 0.117.0 (api) - DEBUG - GET to endpoint: multiple_accounts/get_account_family/ returned response: <Response [200]>
+2020-07-02 22:29:59,497 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: qe/sync/ returned response: <Response [200]>
+2020-07-02 22:30:00,423 - instabot version: 0.117.0 (api) - DEBUG - GET to endpoint: igtv/browse_feed/?prefetch=1 returned response: <Response [200]>
+2020-07-02 22:30:01,061 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: creatives/ar_class/ returned response: <Response [200]>
+2020-07-02 22:30:01,957 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: feed/reels_tray/ returned response: <Response [200]>
+2020-07-02 22:30:03,592 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: feed/timeline/ returned response: <Response [200]>
+2020-07-02 22:30:05,748 - instabot version: 0.117.0 (api) - DEBUG - GET to endpoint: media/blocked/ returned response: <Response [200]>
+2020-07-02 22:30:07,503 - instabot version: 0.117.0 (api) - DEBUG - GET to endpoint: news/inbox/ returned response: <Response [200]>
+2020-07-02 22:30:08,521 - instabot version: 0.117.0 (api) - DEBUG - GET to endpoint: loom/fetch_config/ returned response: <Response [200]>
+2020-07-02 22:30:09,538 - instabot version: 0.117.0 (api) - DEBUG - GET to endpoint: scores/bootstrap/users/?surfaces=["autocomplete_user_list","coefficient_besties_list_ranking","coefficient_rank_recipient_user_suggestion","coefficient_ios_section_test_bootstrap_ranking","coefficient_direct_recipients_ranking_variant_2"] returned response: <Response [200]>
+2020-07-02 22:30:10,354 - instabot version: 0.117.0 (api) - DEBUG - GET to endpoint: business/eligibility/get_monetization_products_eligibility_data/?product_types=branded_content returned response: <Response [200]>
+2020-07-02 22:30:11,392 - instabot version: 0.117.0 (api) - DEBUG - GET to endpoint: business/branded_content/should_require_professional_account/ returned response: <Response [200]>
+2020-07-02 22:30:12,310 - instabot version: 0.117.0 (api) - DEBUG - GET to endpoint: linked_accounts/get_linkage_status/ returned response: <Response [200]>
+2020-07-02 22:30:13,231 - instabot version: 0.117.0 (api) - DEBUG - GET to endpoint: locations/request_country/ returned response: <Response [200]>
+2020-07-02 22:30:14,145 - instabot version: 0.117.0 (api) - DEBUG - GET to endpoint: qp/get_cooldowns/?signed_body=signed_body=4b9c516a5410a3bc128e09c6104a7f042146b9c2023870560c63a43a7f66781c.4&ig_sig_key_version=4&ig_sig_key_version=4 returned response: <Response [200]>
+2020-07-02 22:30:15,087 - instabot version: 0.117.0 (api) - DEBUG - GET to endpoint: users/arlink_download_info/?version_override=2.2.1 returned response: <Response [200]>
+2020-07-02 22:30:16,606 - instabot version: 0.117.0 (api) - DEBUG - GET to endpoint: users/37385306655/info/ returned response: <Response [200]>
+2020-07-02 22:30:17,527 - instabot version: 0.117.0 (api) - DEBUG - GET to endpoint: direct_v2/get_presence/ returned response: <Response [200]>
+2020-07-02 22:30:19,686 - instabot version: 0.117.0 (api) - DEBUG - GET to endpoint: direct_v2/inbox/?visual_message_return_type=unseen&thread_message_limit=10&persistentBadging=true&limit=20 returned response: <Response [200]>
+2020-07-02 22:30:20,607 - instabot version: 0.117.0 (api) - DEBUG - GET to endpoint: direct_v2/inbox/?visual_message_return_type=unseen&persistentBadging=true&limit=0 returned response: <Response [200]>
+2020-07-02 22:30:22,270 - instabot version: 0.117.0 (api) - DEBUG - GET to endpoint: discover/topical_explore/?is_prefetch=true&omit_cover_media=true&use_sectional_payload=true&timezone_offset=0&session_id=35905561-612f-46c8-ace2-0f6d885990a5&include_fixed_destinations=true returned response: <Response [200]>
+2020-07-02 22:30:23,256 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: notifications/badge/ returned response: <Response [200]>
+2020-07-02 22:30:24,607 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: qp/batch_fetch/ returned response: <Response [200]>
+2020-07-02 22:30:24,608 - instabot version: 0.117.0 (bot_checkpoint) - DEBUG - Loading Checkpoint file from: /home/walt/Desktop/___Code-Categories___/_Social Media_/GodBot_Instagram/config/game_revisto.checkpoint
+2020-07-02 22:30:26,596 - instabot version: 0.117.0 (bot_video) - INFO - Started uploading '/home/walt/Downloads/_.mp4'
+2020-07-02 22:32:29,931 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: media/configure/?video=1 returned response: <Response [200]>
+2020-07-02 22:32:30,860 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: qe/expose/ returned response: <Response [200]>
+2020-07-02 22:32:30,861 - instabot version: 0.117.0 (bot_video) - INFO - Video '/home/walt/Downloads/_.mp4' uploaded
+2020-07-02 22:32:31,391 - instabot version: 0.117.0 (bot_checkpoint) - DEBUG - Saving Checkpoint file to: /home/walt/Desktop/___Code-Categories___/_Social Media_/GodBot_Instagram/config/game_revisto.checkpoint
+2020-07-02 22:32:31,393 - instabot version: 0.117.0 (bot) - INFO - Total requests: 33

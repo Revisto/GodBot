@@ -1,0 +1,18 @@
+2020-07-02 19:38:12,061 - instabot version: 0.117.0 (bot) - INFO - Instabot version: 0.117.0 Started
+2020-07-02 19:38:12,062 - instabot version: 0.117.0 (bot) - DEBUG - Bot imported from /usr/local/lib/python3.6/dist-packages/instabot/bot/bot.py
+2020-07-02 19:38:12,064 - instabot version: 0.117.0 (api_login) - DEBUG - Loading cookies
+2020-07-02 19:38:12,065 - instabot version: 0.117.0 (api_login) - DEBUG - Loading uuids
+2020-07-02 19:38:12,065 - instabot version: 0.117.0 (api_login) - INFO - Recovery from /home/walt/Desktop/___Code Categories___/_Social Media_/Bot_InsrtaCopyPosts (copy)/config/Game_Revisto_uuid_and_cookie.json: COOKIE True - UUIDs True - TIMING, DEVICE and ...
+- user-agent=Instagram 117.0.0.28.123 Android (28/9.0; 420dpi; 1080x1920; OnePlus; ONEPLUS A3003; OnePlus3; qcom; en_US; 180322800)
+- phone_id=b697252d-f6d1-45e0-8137-64e31a29a7cf
+- uuid=19d2ce08-b2be-42ca-876b-e6047be2a463
+- client_session_id=365756b0-1337-4e20-a93b-aaa0da0139d2
+- device_id=android-1c85790544379d27
+2020-07-02 19:38:12,065 - instabot version: 0.117.0 (api_login) - INFO - LOGIN FLOW! Just logged-in: False
+2020-07-02 19:38:13,287 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: feed/timeline/ returned response: <Response [200]>
+2020-07-02 19:38:15,020 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: feed/reels_tray/ returned response: <Response [200]>
+2020-07-02 19:38:15,027 - instabot version: 0.117.0 (api) - INFO - Logged-in successfully as 'Game_Revisto'!
+2020-07-02 19:38:15,028 - instabot version: 0.117.0 (bot_checkpoint) - DEBUG - Loading Checkpoint file from: /home/walt/Desktop/___Code Categories___/_Social Media_/Bot_InsrtaCopyPosts (copy)/config/Game_Revisto.checkpoint
+2020-07-02 19:38:40,069 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: media/configure/? returned response: <Response [200]>
+2020-07-02 19:38:40,775 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: qe/expose/ returned response: <Response [200]>
+2020-07-02 19:38:40,776 - instabot version: 0.117.0 (bot_photo) - INFO - Photo '/home/walt/Desktop/___Code Categories___/_Social Media_/Bot_InsrtaCopyPosts (copy)/Downloaded_Instagram_Pictures/CCI_MHgjI1I.jpg' is uploaded.

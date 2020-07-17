@@ -1,0 +1,36 @@
+2020-07-02 19:53:15,533 - instabot version: 0.117.0 (bot) - INFO - Instabot version: 0.117.0 Started
+2020-07-02 19:53:15,537 - instabot version: 0.117.0 (bot) - DEBUG - Bot imported from /usr/local/lib/python3.6/dist-packages/instabot/bot/bot.py
+2020-07-02 19:53:15,539 - instabot version: 0.117.0 (api_login) - DEBUG - Loading cookies
+2020-07-02 19:53:15,541 - instabot version: 0.117.0 (api_login) - DEBUG - Loading uuids
+2020-07-02 19:53:15,541 - instabot version: 0.117.0 (api_login) - INFO - Recovery from /home/walt/Desktop/___Code Categories___/_Social Media_/Bot_InsrtaCopyPosts (copy)/config/Game_Revisto_uuid_and_cookie.json: COOKIE True - UUIDs True - TIMING, DEVICE and ...
+- user-agent=Instagram 117.0.0.28.123 Android (28/9.0; 420dpi; 1080x1920; OnePlus; ONEPLUS A3003; OnePlus3; qcom; en_US; 180322800)
+- phone_id=b697252d-f6d1-45e0-8137-64e31a29a7cf
+- uuid=19d2ce08-b2be-42ca-876b-e6047be2a463
+- client_session_id=61bb9ebd-e2fc-4cff-abc5-c3b333c6bd6d
+- device_id=android-1c85790544379d27
+2020-07-02 19:53:15,543 - instabot version: 0.117.0 (api_login) - INFO - LOGIN FLOW! Just logged-in: False
+2020-07-02 19:53:16,916 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: feed/timeline/ returned response: <Response [200]>
+2020-07-02 19:53:18,093 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: feed/reels_tray/ returned response: <Response [200]>
+2020-07-02 19:53:18,095 - instabot version: 0.117.0 (api) - INFO - Logged-in successfully as 'Game_Revisto'!
+2020-07-02 19:53:18,095 - instabot version: 0.117.0 (bot_checkpoint) - DEBUG - Loading Checkpoint file from: /home/walt/Desktop/___Code Categories___/_Social Media_/Bot_InsrtaCopyPosts (copy)/config/Game_Revisto.checkpoint
+2020-07-02 19:53:40,630 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: media/configure/? returned response: <Response [200]>
+2020-07-02 19:53:41,272 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: qe/expose/ returned response: <Response [200]>
+2020-07-02 19:53:41,274 - instabot version: 0.117.0 (bot_photo) - INFO - Photo '/home/walt/Desktop/___Code Categories___/_Social Media_/Bot_InsrtaCopyPosts (copy)/Downloaded_Instagram_Pictures/CBVTgJMDavY.jpg' is uploaded.
+2020-07-02 19:55:21,519 - instabot version: 0.117.0 (bot) - INFO - Instabot version: 0.117.0 Started
+2020-07-02 19:55:21,520 - instabot version: 0.117.0 (bot) - DEBUG - Bot imported from /usr/local/lib/python3.6/dist-packages/instabot/bot/bot.py
+2020-07-02 19:55:21,521 - instabot version: 0.117.0 (api_login) - DEBUG - Loading cookies
+2020-07-02 19:55:21,521 - instabot version: 0.117.0 (api_login) - DEBUG - Loading uuids
+2020-07-02 19:55:21,522 - instabot version: 0.117.0 (api_login) - INFO - Recovery from /home/walt/Desktop/___Code Categories___/_Social Media_/Bot_InsrtaCopyPosts (copy)/config/Game_Revisto_uuid_and_cookie.json: COOKIE True - UUIDs True - TIMING, DEVICE and ...
+- user-agent=Instagram 117.0.0.28.123 Android (28/9.0; 420dpi; 1080x1920; OnePlus; ONEPLUS A3003; OnePlus3; qcom; en_US; 180322800)
+- phone_id=b697252d-f6d1-45e0-8137-64e31a29a7cf
+- uuid=19d2ce08-b2be-42ca-876b-e6047be2a463
+- client_session_id=61bb9ebd-e2fc-4cff-abc5-c3b333c6bd6d
+- device_id=android-1c85790544379d27
+2020-07-02 19:55:21,522 - instabot version: 0.117.0 (api_login) - INFO - LOGIN FLOW! Just logged-in: False
+2020-07-02 19:55:22,983 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: feed/timeline/ returned response: <Response [200]>
+2020-07-02 19:55:23,841 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: feed/reels_tray/ returned response: <Response [200]>
+2020-07-02 19:55:23,843 - instabot version: 0.117.0 (api) - INFO - Logged-in successfully as 'Game_Revisto'!
+2020-07-02 19:55:23,845 - instabot version: 0.117.0 (bot_checkpoint) - DEBUG - Loading Checkpoint file from: /home/walt/Desktop/___Code Categories___/_Social Media_/Bot_InsrtaCopyPosts (copy)/config/Game_Revisto.checkpoint
+2020-07-02 19:55:46,544 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: media/configure/? returned response: <Response [200]>
+2020-07-02 19:55:47,327 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: qe/expose/ returned response: <Response [200]>
+2020-07-02 19:55:47,327 - instabot version: 0.117.0 (bot_photo) - INFO - Photo '/home/walt/Desktop/___Code Categories___/_Social Media_/Bot_InsrtaCopyPosts (copy)/Downloaded_Instagram_Pictures/CCBvXegjTbU.jpg' is uploaded.

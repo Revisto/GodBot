@@ -1,0 +1,35 @@
+2020-07-05 04:39:35,127 - instabot version: 0.117.0 (bot) - INFO - Instabot version: 0.117.0 Started
+2020-07-05 04:39:35,128 - instabot version: 0.117.0 (bot) - DEBUG - Bot imported from /usr/local/lib/python3.6/dist-packages/instabot/bot/bot.py
+2020-07-05 04:39:35,130 - instabot version: 0.117.0 (api_login) - DEBUG - Loading cookies
+2020-07-05 04:39:35,131 - instabot version: 0.117.0 (api_login) - DEBUG - Loading uuids
+2020-07-05 04:39:35,131 - instabot version: 0.117.0 (api_login) - INFO - Recovery from /home/walt/Desktop/___Code-Categories___/_Social Media_/GodBot_Instagram/config/Game_Revisto_uuid_and_cookie.json: COOKIE True - UUIDs True - TIMING, DEVICE and ...
+- user-agent=Instagram 117.0.0.28.123 Android (28/9.0; 420dpi; 1080x1920; OnePlus; ONEPLUS A3003; OnePlus3; qcom; en_US; 180322800)
+- phone_id=b697252d-f6d1-45e0-8137-64e31a29a7cf
+- uuid=19d2ce08-b2be-42ca-876b-e6047be2a463
+- client_session_id=60f5136f-771d-4878-b2eb-8abfbb0b9d38
+- device_id=android-1c85790544379d27
+2020-07-05 04:39:35,131 - instabot version: 0.117.0 (api_login) - INFO - LOGIN FLOW! Just logged-in: False
+2020-07-05 04:39:36,617 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: feed/timeline/ returned response: <Response [200]>
+2020-07-05 04:39:37,558 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: feed/reels_tray/ returned response: <Response [200]>
+2020-07-05 04:39:37,560 - instabot version: 0.117.0 (api) - INFO - Logged-in successfully as 'Game_Revisto'!
+2020-07-05 04:39:37,560 - instabot version: 0.117.0 (bot_checkpoint) - DEBUG - Loading Checkpoint file from: /home/walt/Desktop/___Code-Categories___/_Social Media_/GodBot_Instagram/config/Game_Revisto.checkpoint
+2020-07-05 04:40:58,810 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: media/configure/? returned response: <Response [200]>
+2020-07-05 04:40:59,858 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: qe/expose/ returned response: <Response [200]>
+2020-07-05 04:40:59,859 - instabot version: 0.117.0 (bot_photo) - INFO - Photo '/home/walt/Desktop/___Code-Categories___/_Social Media_/GodBot_Instagram/Downloaded_Instagram_Pictures/CCOU2-YldGK.jpg' is uploaded.
+2020-07-05 05:40:30,588 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: media/configure/? returned response: <Response [200]>
+2020-07-05 05:40:31,406 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: qe/expose/ returned response: <Response [200]>
+2020-07-05 05:40:31,406 - instabot version: 0.117.0 (bot_photo) - INFO - Photo '/home/walt/Desktop/___Code-Categories___/_Social Media_/GodBot_Instagram/Downloaded_Instagram_Pictures/CCPSHL4j0lK.jpg' is uploaded.
+2020-07-05 06:40:52,516 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: media/configure/? returned response: <Response [500]>
+2020-07-05 06:40:52,516 - instabot version: 0.117.0 (api) - DEBUG - Responsecode indicates error; response content: b'{"message": "Unknown Server Error.", "status": "fail"}'
+2020-07-05 06:40:52,517 - instabot version: 0.117.0 (api) - ERROR - Request returns 500 error!
+2020-07-05 06:41:09,102 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: media/configure/? returned response: <Response [200]>
+2020-07-05 06:41:10,077 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: qe/expose/ returned response: <Response [200]>
+2020-07-05 06:41:10,078 - instabot version: 0.117.0 (bot_photo) - INFO - Photo '/home/walt/Desktop/___Code-Categories___/_Social Media_/GodBot_Instagram/Downloaded_Instagram_Pictures/CCPYyMpFBmu.jpg' is uploaded.
+2020-07-05 07:40:44,119 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: media/configure/? returned response: <Response [200]>
+2020-07-05 07:40:45,040 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: qe/expose/ returned response: <Response [200]>
+2020-07-05 07:40:45,041 - instabot version: 0.117.0 (bot_photo) - INFO - Photo '/home/walt/Desktop/___Code-Categories___/_Social Media_/GodBot_Instagram/Downloaded_Instagram_Pictures/CCNqjfNjhmq.jpg' is uploaded.
+2020-07-05 08:40:37,166 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: media/configure/? returned response: <Response [200]>
+2020-07-05 08:40:38,087 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: qe/expose/ returned response: <Response [200]>
+2020-07-05 08:40:38,087 - instabot version: 0.117.0 (bot_photo) - INFO - Photo '/home/walt/Desktop/___Code-Categories___/_Social Media_/GodBot_Instagram/Downloaded_Instagram_Pictures/CCNcYu1pCS_.jpg' is uploaded.
+2020-07-05 14:48:27,895 - instabot version: 0.117.0 (bot_checkpoint) - DEBUG - Saving Checkpoint file to: /home/walt/Desktop/___Code-Categories___/_Social Media_/GodBot_Instagram/config/Game_Revisto.checkpoint
+2020-07-05 14:48:27,909 - instabot version: 0.117.0 (bot) - INFO - Total requests: 54
