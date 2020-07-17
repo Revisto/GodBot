@@ -1,11 +1,13 @@
 from _Lib_._Lib_ import *
 from instabot import Bot
+import string
 #-D-A-T-A-------------------------------------------------------------
 import _DataStuff_.PostsLinks
 import _DataStuff_.DailyMemory
 import _DataStuff_.Targets
 import _DataStuff_.DoneTargets
 import _DataStuff_.Followed
+
 
 class Telegram:
     
@@ -64,7 +66,7 @@ class Telegram:
         EveryThing Is Fine and Working !~!
                 
         """
-        '''
+        
         HelpMessage={"Ban":Ban,"TryExcept":TryExcept,"Fine":Fine,'Count':Count,"Init":Init}
         Message= HelpMessage[bot_message]
         Message+='''
@@ -77,9 +79,28 @@ class Telegram:
         send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + Message
         response = requests.get(send_text)
         print (response)
-        '''
-
         print ("Notification >>> "+str(bot_message)+"   "+str(e))
+
+    def SendNakedText(self,Message):
+        bot_token = 'BOT-TOKEN'
+        bot_chatID = 'ID'
+        send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + Message
+        response = requests.get(send_text)
+
+    def sendWhoHasBeenUnFollowed(self,UserName):
+        Time=str((":".join(map(str, DataStuff().Time()))))
+        Enter=(string.whitespace)*2
+        Message="Successfully Unfollowed"+Enter+'-- '+UserName+' --'+Enter+"Time : "+Time 
+        Telegram().SendNakedText(Message)
+    
+    def SendPhoto(self,Path):
+        token = '1157357579:AAHsE-AWoUp2uNJKCpRY2QZ9_gsYqhG_qz0'
+        chat_id = -1001435939818
+        file = Path
+        url = f"https://api.telegram.org/bot{token}/sendPhoto"
+        files = {}
+        files["photo"] = open(file, "rb")
+        requests.get(url, params={"chat_id": chat_id}, files=files)
 
 class Agriculture:
     
@@ -90,8 +111,11 @@ class Agriculture:
             if HeadLess:
                 options.add_argument('headless')
             options.add_argument('--no-sandbox')
+            options.add_argument("start-maximized")
+            options.add_argument("disable-infobars")
+            options.add_argument("--disable-extensions")
             options.add_argument('--disable-dev-shm-usage')
-            options.add_argument('--user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1')
+            options.add_argument('--user-agent=Mozilla/5.0 (Linux; Android 10; SM-A205U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Mobile Safari/537.36')
             Drive = webdriver.Chrome(chrome_options=options)
             return Drive
 
@@ -100,9 +124,9 @@ class Agriculture:
          
         if SetBot:
             bot = Bot()
-            bot.login(username=UserName, password=Password)
+            bot.login(username=UserName, password=Password ,use_cookie=False)
             self.bot=bot  
-
+    
     def LogIn(self,UserName,Password):
         self.Drive.get("https://www.instagram.com/accounts/login/")
         sleep(5)
@@ -211,20 +235,23 @@ class Agriculture:
         return {"Amount":Amount,"Paths":ListOfNames,"Type":Type}
     
     def Post(self,Path,Caption):
-        
+        print ("---Posting---")
         self.bot.upload_photo(Path, caption=Caption)
 
-    def SendDirectMessage(self,UserName,Text):
+    def Direct(self,UserName,Text):
         self.Drive.get("https://www.instagram.com/direct/new/")
         TypeTarget=self.Drive.find_element_by_class_name("M5V28")
         TypeTarget.send_keys(str(UserName))
         sleep(3)
         Choices=self.Drive.find_elements_by_class_name("soMvl")
         RawNames_=self.Drive.find_elements_by_class_name("uL8Hv")
-        RawNames_=RawNames_[1:]
+        #RawNames_=RawNames_[1:]
         Names=[]
         for Name in RawNames_:
             Names.append(Name.text)
+        if 'No account found.' in Names:
+            return Names
+        
         IndexTarget=Names.index(UserName)
         
         Choices[IndexTarget].click()
@@ -234,6 +261,7 @@ class Agriculture:
         TextArea.send_keys(str(Text))
         Send=self.Drive.find_elements_by_class_name("y3zKF")
         Send[-1].click()
+        return True
 
     def ReplyStory(self,UserName,Text):
         self.Drive.get("https://www.instagram.com/"+UserName)
@@ -250,9 +278,10 @@ class Agriculture:
             return {"Story":True , "Reply":False}
         
         TextArea.send_keys(Text)
-        sleep(0.5)
-        self.Drive.find_element_by_class_name("JI_ht").click()
-        
+        sleep(0.2)
+        for _ in range(2):
+            (self.Drive.find_elements_by_class_name("_4EzTm"))[-1].click()
+            sleep(0.1)        
         return {"Story":True , "Reply":True}
     
     def CommentOnSpecificPost(self,Link,text):
@@ -312,34 +341,45 @@ class Agriculture:
         self.Drive.get("https://www.instagram.com/"+UserName)
         print ("Currntly We Are In >> "+str(UserName))
         
-    def UnFollow_WhenYouAreInTargetAccount(self,HowMuchToUnfollow,Delay):
+    def UnFollow_WhenYouAreInTargetAccount(self,UserName,Delay):
         def OpenFollowers():
             Followers = self.Drive.find_elements_by_class_name("g47SY")
             Followers[2].click()
-            sleep(3)
+            sleep(2)
+
             
-        def ScrollDown(Target):
-            for _ in range (1):
-                self.Drive.find_element_by_class_name("_1XyCr").click()
-                body = self.Drive.find_element_by_css_selector('body')
-            while True:
+        def ScrollDown():
+            self.Drive.find_element_by_class_name("_1XyCr").click()
+            body = self.Drive.find_element_by_css_selector('body')
+            for i in range (1):
                 body.send_keys(Keys.PAGE_DOWN)
                 print ("---Scroll---")
                 print (len(self.Drive.find_elements_by_class_name("_8A5w5"))-1)
-                if len(self.Drive.find_elements_by_class_name("_8A5w5"))>=Target+1:
-                    break
-                
+                sleep(1)
+        
+        def HowMuchWeFound():
+            return (int(len(self.Drive.find_elements_by_class_name("_8A5w5"))-1))
+               
         OpenFollowers()
-        sleep(5)
-        ScrollDown(HowMuchToUnfollow)
         sleep(3)
-        for i in range (HowMuchToUnfollow):
+        print ("Found >>> "+str(HowMuchWeFound()))
+        #ScrollDown()
+        self.Drive.save_screenshot("SCREEN.png")
+        Telegram().SendPhoto("SCREEN.png")
+        os.remove("SCREEN.png")
+
+        for i in range (HowMuchWeFound()):
             ListOfUnfollowChoices=self.Drive.find_elements_by_class_name("_8A5w5")
+            ListOfNames=self.Drive.find_elements_by_class_name("_0imsa")
             ListOfUnfollowChoices[1].click()
             sleep(1)
             (self.Drive.find_elements_by_class_name("aOOlW"))[0].click()
             print (">>>SuccessFully UnFollowed<<< at time  ",(":".join(map(str, DataStuff().Time()))))
+            Telegram().sendWhoHasBeenUnFollowed(str(ListOfNames[i].text))
+            if i>=20:
+                break
             sleep(Delay)
+            
       
     def CountFollowingAndFollowers(self,Target):
         url = 'https://www.instagram.com/' + Target
@@ -349,21 +389,43 @@ class Agriculture:
         followings = re.search('"edge_follow":{"count":([0-9]+)}',r).group(1)
         return [followers,followings]
 
-    def MinePostLinks_WhenYouAreInTargetAccount(self,ListOfPosts):
+    def MinePostLinks_WhenYouAreInTargetAccount_OldVersion(self,ListOfPosts):
         sleep(5)
         Links=[]
         sleep(5)
-        Posts=self.Drive.find_elements_by_class_name("eLAPa")
+        Posts=self.Drive.find_elements_by_class_name("FFVAD")
         for i in ListOfPosts:
             if i>len(Posts):
                 print ("--- Post UnAvaiable ---")
                 return False
         print ('--Start Mining Posts---')
         for PostIndex in ListOfPosts:
-            Posts[int(PostIndex)-1].click()
-            Links.append(self.Drive.current_url)
-            sleep(1)
-            (self.Drive.find_elements_by_class_name("TxciK"))[-1].click()
+            #print (Posts[PostIndex].get_at)
+            pass
+        
+    def MinePostLinks_WhenYouAreInTargetAccount(self,ListOfPosts):
+        sleep(5)
+    
+        Links=[]
+        SelectedLinks=[]
+        print ('--Start Mining Posts---')
+        for i in(self.Drive.find_elements_by_xpath("//a")):
+            Link=(i.get_attribute("href"))
+            Test=Link.split("/")
+            if "p" in Test:
+                Links.append(Link)
+                
+        for i in ListOfPosts:
+            if i>len(Links):
+                print ("--- Post UnAvaiable ---")
+                return False 
+            SelectedLinks.append(Links[int(i)-1])       
+        #print (SelectedLinks)
+        return SelectedLinks
+            
+
+
+
         print ("Done Mining , Got _ "+str(len(Links))+" _Posts")
         return Links
     
@@ -372,7 +434,7 @@ class Agriculture:
         for Target in ContentTarget:
             Agriculture_All_Set_Up.GoToAccount(Target)
             
-            ListOfPostNames=Agriculture_All_Set_Up.MinePostLinks_WhenYouAreInTargetAccount([1,2,3,4,5,6])
+            ListOfPostNames=Agriculture_All_Set_Up.MinePostLinks_WhenYouAreInTargetAccount([1,2,3])
             #print (ListOfPostNames)
             if ListOfPostNames!=False:
                 for PostOfThree in ListOfPostNames:
@@ -394,25 +456,97 @@ class Agriculture:
                         print (">Damn , That Has Been Already Posted")
         return False
     
-    def AutoFollow(self,Agriculture_All_Set_Up):
+    def AutoFollow(self,Agriculture_All_Set_Up,AmounMinutesToTry=9**9**2):
+        Secs=AmounMinutesToTry*60
         OneRawTarget=DataStuff().ReturnRawTargets(1)
         if OneRawTarget==False:
             print (">>> Quit Auto Follow , Not One Raw Target <<<")
             return False
-        
+        Before=time()
         while not(Agriculture_All_Set_Up.Follow(OneRawTarget[0],Agriculture_All_Set_Up)):
-            DataStuff().AddToDoneTargets(OneRawTarget[0])
             OneRawTarget=DataStuff().ReturnRawTargets(1)
             if OneRawTarget==False:
                 print (">>> Quit Auto Follow , Not One Raw Target <<<")
                 return False
-        
+            if time()-Before>=Secs:
+                print (" Cant Follow Due To Time ")
+                return False
+            
+        DataStuff().AddToDoneTargets(OneRawTarget[0])
         DataStuff().AddToFollowed(OneRawTarget[0])
-        DataStuff().AutoAddValue("Follow")
         
         return True
+             
+    def AutoUnFollow(self,Agriculture_All_Set_Up,DaysLimit=2):
+        FollowData=DataStuff().ReturnFollowed()
+        if len(FollowData)==0:
+            print (">>> Followings Are 0 <<<")
+            return False     
+        SuitableCases=[]
+        for EachFollowing in FollowData:
+            DateFollowed=EachFollowing["Date"]
+            DateNow=DataStuff().Date()
+            DaysFollowed=(DateNow[0] - DateFollowed[0])*365 + (DateNow[1] - DateFollowed[1])*30 + (DateNow[2] - DateFollowed[2])
+            if DaysFollowed>=DaysLimit:
+                SuitableCases.append([DaysFollowed,EachFollowing["UserName"]])
         
-          
+        SuitableCases.sort()
+        if len(SuitableCases)==0:
+            return False
+        SuitableCases.reverse()
+        for Case in SuitableCases:
+            UserNameCase=Case[1]
+               
+            if Agriculture_All_Set_Up.UnFollow(UserNameCase,Agriculture_All_Set_Up):
+                print ("Days : "+str(Case[0]))
+                DataStuff().DeleteFromFollowed(UserNameCase)
+                return True  
+    
+    def AutoReplyStory(self,Agriculture_All_Set_Up,AmounMinutesToTry=9**9**2):
+        Secs=AmounMinutesToTry*60
+        Before=time()
+        for UserName in DataStuff().ReturnRawTargets():
+            Response=Agriculture_All_Set_Up.ReplyStory(UserName,DataStuff().ReplyGenerator())
+            if Response["Story"]==True and Response["Reply"]==True:
+                print (UserName)
+                DataStuff().AddToDoneTargets(UserName)
+                return True
+            if time()-Before>=Secs:
+                print (" Cant Find any Story Due To Time ")
+                return False
+        return False
+    
+    def AutoDirect(self,Agriculture_All_Set_Up,AmounMinutesToTry=9**9**2):
+        
+
+        Secs=AmounMinutesToTry*60
+        Before=time()
+        while True:
+            Case=DataStuff().ReturnRawTargets(1)
+            Case=Case[0]
+            #Case="sjhudusifgsufgwetgwdwew"
+            Verification=Agriculture_All_Set_Up.Direct(Case,DataStuff().DirectGenerator())
+            if not('No account found.' in str(Verification)):
+                DataStuff().AddToDoneTargets(Case)
+                return True
+            if time()-Before>=Secs:
+                print (" Cant Find any Story Due To Time ")
+                return False
+        
+    def AutoAction(self,Action,Agriculture_All_Set_Up):
+        ActionsDict={
+            'Direct':[Agriculture_All_Set_Up.AutoDirect,(Agriculture_All_Set_Up,5)],
+            'ReplyStory':[Agriculture_All_Set_Up.AutoReplyStory,(Agriculture_All_Set_Up,5)],
+            'Follow':[Agriculture_All_Set_Up.AutoFollow,(Agriculture_All_Set_Up,5)],
+            'Direct':[Agriculture_All_Set_Up.AutoDirect,(Agriculture_All_Set_Up,2)],
+        }
+        if Action not in ActionsDict:
+            return False
+        ActionsDict[Action][0](*ActionsDict[Action][1])
+        if not(DataStuff().IsDailyMemoryForToday()):
+            DataStuff().ReplaceFile()
+        DataStuff().AutoAddValue(Action)
+        
 class DataStuff:
     
     def ActionLimits(self,TheKey):
@@ -440,7 +574,7 @@ class DataStuff:
         Dict=DataStuff().GetDailyMemory()
         Actions=[]
         for Key in Dict:
-            if not( len(Dict[Key]) >= DataStuff().ActionLimits(Key) ):
+            if not( len(Dict[Key]) >= DataStuff().ActionLimits(str(Key)+"PerDay") ):
                 ListOfActions=Dict[Key]
                 if ListOfActions==[]:
                     Actions.append([1,str(Key)])
@@ -469,10 +603,14 @@ class DataStuff:
                 SimilarBestActions.append(Action)
             else:
                 break
-        
-        KeyOfBestAction=(random.choice(SimilarBestActions))[1]
+        RandomBestAction=(random.choice(SimilarBestActions))
+        KeyOfBestAction=RandomBestAction[1]
         #return KeyOfBestAction,Actions
-        return KeyOfBestAction     
+        Actions.remove(RandomBestAction)
+        KeyActions=[]
+        for Action in Actions:
+            KeyActions.append(Action[1])
+        return {'BestAction':KeyOfBestAction , 'AllActionsExceptBestAction':KeyActions}     
         
     def IsDailyMemoryForToday(self):
         Dict=DataStuff().GetDailyMemory() 
@@ -565,7 +703,7 @@ class DataStuff:
     def CaptionGenerator(self):
         
         Text="""
-        بروزترین پیج جمع آوری ترند های گیم در اینستاگرام!
+        !
             
              
                 
@@ -588,6 +726,30 @@ class DataStuff:
 
         return Text+(" ".join(HashTags))
     
+    def DirectGenerator(self):
+        
+        Text="""
+        چرا این همه پیج گیم رو فالو کردی؟
+            
+            
+            
+        (▀̿Ĺ̯▀̿ ̿)
+        @Game_Revisto
+        کامل ترین مرجع جمع آوری ترند های گیم و فان
+            
+        """
+        Text.replace("        ","")
+        Text.replace("      ","")
+        return Text
+  
+    def ReplyGenerator(self):
+        Text="""
+        چرا این همه پیج گیم رو فالو کردی؟ 
+        @Game_Revisto 
+        """
+        
+        return Text 
+  
     def ContentTarget(self):
         List=['donyaye.game', 'gametester.ir', 'zula_club', 'funtrol', 'gameroidsetups', 'donsgame', 'digi__game', 'gameofsen', 'resane_game', 'farsitoons', 'pandagaming.ir', 'game__soul', 'valhalla.assassinscreed', 'gta_san_andreas_fanpage', 'akhbar_bazii_jadid', 'caffeplay.ir', 'baziips4', 'baazi.tori', 'orinokogamingunion', 'richthofen774_gm', 'maddgamers', 'gamersdreampark', 'game_._cut', 'hazardoushtv', 'gam3r.ir', 'nsworld.ir', 'irgame_fun', 'bazi_gram', 'key_mart_ir', 'shadowgame_fa', 'gameplayiran', 'keoxic.plays', 'magnetgame', 'kourosh_toupia', 'zhangoolak', 'game.shop_ir', 'looketo', 'persiian_text', 'mr_gameclub', 'box.bazi', 'controlzed.ir']
         List_=[]
@@ -661,13 +823,10 @@ class DataStuff:
                 TargetFound=Dict
                 List.remove(TargetFound)
                 List.insert(0,{"UserName":"UserName" , "Date":[0000,0,0]})
-                print (List)
                 Written=str(tuple(List))
-                print (Written)
                 Written=Written[1:-1]
                 if not(Written[-1]=="," or Written[-2]==","):
                     Written+=" , "
-                print (Written)
                 DataStuff().ReplaceFile(Written,"Followed.py",'FollowedUserNames')
                 return True
         return False
@@ -691,9 +850,8 @@ class Full_Programs:
         if CookieName:
             CookieName=UserName
         Telegram().SendMessage("Init")
-        CountUnfollows=15
 
-        DelayPackage=400
+        DelayPackage=210
         i=0
         while True:
             i+=1
@@ -704,19 +862,23 @@ class Full_Programs:
                 Telegram().SendMessage("Count",str(e))
                 print (e)'''
 
-            if True:
+            try:
                 Insta=Agriculture(SetBot=False,HeadLess=HeadLess)
                 Insta.LogInInstagramByCookie(CookieName)
                 Insta.GoToAccount(UserName)
-                Insta.UnFollow_WhenYouAreInTargetAccount(CountUnfollows,DelayEachSingleUnfollow)
-                Insta.CloseDriver()
+                Insta.UnFollow_WhenYouAreInTargetAccount(UserName,DelayEachSingleUnfollow)
+                #Insta.CloseDriver()
                 sleep(DelayPackage)
             
-            '''except Exception as e:
+            
+            except Exception as e:
                 print ("<<<>>><<<>>> There Is An ERROR <<<>>><<<>>>")
                 print (e)
                 Telegram().SendMessage("TryExcept",str(e))
-            ''' 
+                try:
+                    Insta.CloseDriver()
+                except:
+                    pass
             
             
             '''try:
@@ -728,35 +890,54 @@ class Full_Programs:
                 Telegram().SendMessage("Count",str(e))
                 print (e)'''
             
-            if i%10==0:
-                Telegram().SendMessage("Working Fine")
+            if i%1==0:
+                Telegram().SendMessage("Fine")
             
     def AutoPost(self,UserName,PassWord,EachMinute,Amount=9**9**2,HeadLess=True,SetBot=True):
         Insta=Agriculture(UserName,PassWord,SetBot=SetBot,HeadLess=HeadLess)
+        sleep(50)
         Insta.LogInInstagramByCookie("Game_Revisto")
         for _ in range (Amount):
             Bef=time()
-            try:
+            if True:
                 while not(Insta.Repost(Insta,UserName,PassWord,DataStuff().CaptionGenerator())):
                     pass      
                 Now=time()
                 Taken=Now-Bef
                 if not(Taken>=EachMinute*60):
-                    print ("WAITING >>>  ",str(EachMinute*60-Taken),"min" )
+                    print ("WAITING >>>  ",str(EachMinute*60-Taken),"sec" )
                     sleep(EachMinute*60-Taken)
                 
-            except Exception as e:
+            '''except Exception as e:
                 print ("error >>>  ",e)
-                print ("***********Couldnt Make It*******************")
+                print ("***********Couldnt Make It*******************")'''
                 
         Insta.CloseDriver()
          
+    def FollowerEarner(self,UserName,PassWord,CookieName=True,HeadLess=True):
+        if CookieName:
+            CookieName=UserName
+        Insta=Agriculture(UserName,PassWord,SetBot=True,HeadLess=HeadLess)
+        Insta.LogInInstagramByCookie(CookieName)
+        
+        def EachLoop():
+        
+            if not(DataStuff().IsDailyMemoryForToday()):
+                DataStuff().ReplaceFile()
+            
+            ResponseWhatCanWeDoNow=DataStuff().ReturnWhatCanWeDoNow()
+            if ResponseWhatCanWeDoNow!=False:
+                if Insta.AutoAction(ResponseWhatCanWeDoNow["BestAction"],Insta):
+                    print ("---___--- "+ResponseWhatCanWeDoNow["BestAction"]+" ---___---")
+                    return True
+                for Act in ResponseWhatCanWeDoNow['AllActionsExceptBestAction']:
+                    if Insta.AutoAction(Act,Insta):
+                        print ("---___--- "+Act+" ---___---")
+                        return True
+            
+            return False
+            
+        while True:
+            EachLoop()
+            sleep(1)
 
-'''A=Agriculture(SetBot=False,HeadLess=False)
-A.LogInInstagramByCookie("Game_Revisto")
-
-while True:
-    A.AutoFollow(A)'''
-
-
-print 
