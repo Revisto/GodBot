@@ -11,6 +11,10 @@ import _DataStuff_.Followed
 
 class Telegram:
     
+    def __init__(self):
+        self.Bot_Token='BOT_TOKEN'
+        self.Chat_Id="CHAT_ID"
+    
     def SendMessage(self,bot_message,e=""):
         
         Init="""
@@ -74,16 +78,16 @@ class Telegram:
         '''+e
         
         
-        bot_token = '1157357579:AAHsE-AWoUp2uNJKCpRY2QZ9_gsYqhG_qz0'
-        bot_chatID = '-1001435939818'
+        bot_token = self.Bot_Token
+        bot_chatID = self.Chat_Id
         send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + Message
         response = requests.get(send_text)
         print (response)
         print ("Notification >>> "+str(bot_message)+"   "+str(e))
 
     def SendNakedText(self,Message):
-        bot_token = 'BOT-TOKEN'
-        bot_chatID = 'ID'
+        bot_token = self.Bot_Token
+        bot_chatID = self.Chat_Id
         send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + Message
         response = requests.get(send_text)
 
@@ -94,8 +98,8 @@ class Telegram:
         Telegram().SendNakedText(Message)
     
     def SendPhoto(self,Path):
-        token = '1157357579:AAHsE-AWoUp2uNJKCpRY2QZ9_gsYqhG_qz0'
-        chat_id = -1001435939818
+        token = self.Bot_Token
+        chat_id = self.Chat_Id
         file = Path
         url = f"https://api.telegram.org/bot{token}/sendPhoto"
         files = {}
